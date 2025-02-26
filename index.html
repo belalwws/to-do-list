@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=add" />
+  <style>
+    body {
+      font-family: "cairo";
+      background-color: rgb(30, 0, 77);
+    }
+
+    .task {
+      display: flex;
+      padding: 4px;
+      background-color: #fff;
+      border-bottom: solid black 1px;
+    }
+
+    .done {
+      display: flex;
+      background-color: rgb(158, 253, 160);
+      border-bottom: solid black 1px;
+    }
+
+    .task:hover {
+      box-shadow: 0px 3px 15px;
+      transition: 0.3s;
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: 10px;
+      line-height: 2px;
+    }
+
+    button {
+      border: none;
+      font-size: 20px;
+      box-shadow: 0px 3px 5px rgba(168, 168, 168, 0.38);
+    }
+  </style>
+</head>
+
+<body>
+  <div style="direction: rtl">
+    <!-- centerd div -->
+    <div style="display: flex; justify-content: center; align-items: center">
+      <!-- tasks table -->
+      <div style="
+            width: 60%;
+            background-color: rgb(239, 239, 239);
+            margin-top: 150px;
+          ">
+        <!-- tasks header -->
+        <div style="
+              width: 100%;
+              text-align: center;
+              color: #fff;
+              background-color: red;
+            ">
+          <h1 style="display: inline">مهامي</h1>
+          <button id="add-button" class="circle" style="float: right">
+            <span class="material-symbols-outlined"> add </span>
+          </button>
+        </div>
+        <div id="tasks" class="tasks" style="padding: 20px">
+          <div class="task">
+            <!-- tasks info -->
+            <div class="taskinfo" style="width: 70%">
+              <h2>قراءه كتاب</h2>
+              <div style="color: black; display: flex; gap: 10px ">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                  fill="#000000">
+                  <path
+                    d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                </svg>
+                <path
+                  d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                </svg><span>10/10/2030</span>
+              </div>
+            </div>
+            <!-- tasks actions -->
+            <div class="taskactions" style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  width: 20%;
+                ">
+              <button class="circle" style="background-color: red; color: #fff">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                  fill="#e8eaed">
+                  <path
+                    d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                </svg>
+              </button>
+              <button class="circle" style="background-color: green; color: #fff">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                  fill="#e8eaed">
+                  <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                </svg>
+              </button>
+              <button class="circle" style="background-color: aqua; color: #fff">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                  fill="#e8eaed">
+                  <path
+                    d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+  let tasks = [
+    {
+
+      "title": "مشاهده فيلم",
+      "date": "30/9/2023",
+      "isDone": false,
+
+
+    },
+
+    {
+
+      "title": "ممارسه رياضه",
+      "date": "30/9/2023",
+      "isDone": false,
+
+
+    },
+
+    {
+
+      "title": "انهاء كورس جافا",
+      "date": "30/9/2023",
+      "isDone": false,
+
+
+    },
+
+
+
+  ]
+function getTasksFromStorage(){
+    let retriveTasks = JSON.parse(localStorage.getItem("tasks"))
+    tasks = retriveTasks ?? []
+
+}
+getTasksFromStorage()
+  function fillTasksOnThePage() {
+    document.getElementById("tasks").innerHTML = ""
+    let index = 0
+
+    for (task of tasks) {
+      let content = `<div class="task ${task.isDone ?' done':''} ">
+              <!-- tasks info -->
+              <div class="taskinfo" style="width: 70%">
+                <h2>${task.title}</h2>
+                <div style="color: black; display: flex; gap: 10px ">
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>                    <path
+                      d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"
+                    /></svg
+                  ><span>${task.date}</span>
+                </div>
+              </div>
+              <!-- tasks actions -->
+              <div
+                class="taskactions"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  width: 20%;
+                "
+              >
+                <button onclick = "deleteTask(${index})"
+                  class="circle"
+                  style="background-color: red; color: #fff"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+                    />
+                  </svg>
+                </button>
+
+${task.isDone ?      `<button 
+                onclick = "taskDone(${index})"
+                  class="circle"
+                  style="background-color: green; color: #fff"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                </button>`                     :
+
+
+
+
+
+
+`  <button 
+                onclick = "taskDone(${index})"
+                  class="circle"
+                  style="background-color: green; color: #fff"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"  
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"
+                    />
+                  </svg>
+                </button>
+`}
+
+              
+
+
+
+                <button 
+                  class="circle"
+              onclick = "editTask(${index})"
+                  style="background-color: aqua; color: #fff"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+`
+      document.getElementById("tasks").innerHTML += content;
+      index++;
+    }
+  }
+  fillTasksOnThePage()
+  document.getElementById("add-button").addEventListener("click", function () {
+    let taskname = prompt("ادخل عنوان المهمه")
+    let date = new Date()
+    let now = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
+    let taskobject = {
+
+      "title": taskname,
+      "date": now,
+      "isDone": false,
+
+
+    }
+    tasks.push(taskobject)
+handleSorage()
+
+    // 
+    fillTasksOnThePage()
+
+  })
+
+  function deleteTask(index) {
+    let task = tasks[index]
+    let isConfirmed = confirm("هل انت متاكد من انك تريد حذف:" + task.title)
+    if (isConfirmed) {
+
+      tasks.splice(index, 1)
+      handleSorage()
+
+      fillTasksOnThePage()
+    }
+  }
+  function editTask(index) {
+    let edit = prompt("enter your edit")
+    let task = tasks[index]
+    task.title = edit
+    handleSorage()
+
+    fillTasksOnThePage()
+
+
+  }
+
+  function taskDone(index) {
+    let task = tasks[index]
+
+task.isDone = !task.isDone
+handleSorage()
+
+fillTasksOnThePage()
+
+
+  }
+
+  function handleSorage(){
+        let stringTasks = JSON.stringify(tasks)
+    localStorage.setItem("tasks",stringTasks)
+
+  }
+</script>
+
+</html>
